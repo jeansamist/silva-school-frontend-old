@@ -7,7 +7,8 @@
   --color-info: rgba(25, 33, 66, 0.3);
   --color-info-2: rgba(25, 33, 66, 0.699);
   --border: #d5e3ec;
-  --background: #f5f3fc;
+  --background: #f3f4f6;
+  /* --background: #f5f3fc; */
   /* --background: #f7fafb; */
   --shadow: #e5e5f1;
   /* --shadow: #d8e1e8; */
@@ -116,6 +117,14 @@ button {
 
 .btn.btn-large {
   width: 100%;
+}
+
+.btn.btn-danger {
+  background: var(--red);
+}
+
+.btn.btn-warning {
+  background: var(--yellow);
 }
 
 .field {
@@ -326,6 +335,43 @@ button {
   border: 1px solid var(--border);
 }
 
+.card.card-modal {
+  max-height: 80vh;
+  padding: 0 !important;
+  overflow: auto;
+}
+
+.card.card-modal>.card-head {
+  position: sticky;
+  top: 0em;
+  left: 0em;
+  background: #fff;
+  padding: 0.75em 1.5em;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px var(--shadow);
+}
+
+
+.card.card-modal>.card-footer {
+  position: sticky;
+  bottom: 0em;
+  left: 0em;
+  background: #fff;
+  padding: 0.75em 1.5em;
+  font-weight: bold;
+  display: flex;
+  justify-content: end;
+  gap: 0.75em;
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -2px 5px var(--shadow);
+}
+
+.card.card-modal>.card-content {
+  padding: 1.5em;
+}
+
 .card>.card-title {
   font-size: 2em;
   font-weight: bold;
@@ -525,7 +571,7 @@ table td .color {
 
 .jumbotron .content>.illustration {
   width: 200px;
-  transform: translateX(30%) scale(1.5);
+  transform: translateY(10%) translateX(30%) scale(1.5);
 }
 
 .topbar {
@@ -559,6 +605,7 @@ table td .color {
 }
 
 .dropdown-container>.dropdown {
+  z-index: 3;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -611,7 +658,7 @@ table td .color {
 }
 
 .sidebar>.brand {
-  width: 75px;
+  width: 50px;
   /* margin: auto; */
   margin-left: 1.5em;
 }
@@ -732,4 +779,106 @@ input[type=checkbox] {
   /* right: 50%; */
   top: 50%;
   transform: translateY(-50%);
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.modal-container.active {
+  pointer-events: auto;
+}
+
+.modal-container>.modal-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  z-index: 6;
+}
+
+.modal-container>.modal {
+  width: 500px;
+  margin: auto;
+  margin-top: 5%;
+  position: relative;
+  z-index: 7;
+}
+
+.app-main {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+}
+
+.app-main .views {
+  padding: 1.5em;
+  height: calc(100vh - 83px);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+
+
+.stat-card {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 1px 4px var(--shadow);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--border-raduis) * 2);
+}
+
+.stat-card>.ico {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  /* line-height: ; */
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1em;
+  box-shadow: 1px 1px 4px var(--secondary), -1px -1px 4px var(--secondary);
+}
+
+.stat-card>.datas>.label {
+  color: var(--color-info);
+}
+
+
+.stat-card>.datas>.data {
+  font-size: 1.75em;
+  font-weight: bold;
+}
+
+.view.dashboard>.stats {
+  margin-top: 6em;
+  margin-bottom: 1.5em;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.mb-2 {
+  margin-bottom: 1.5em;
+}
+
+.mb-3 {
+  margin-bottom: 2em;
+}
+
+.mb-4 {
+  margin-bottom: 2.5em;
 }

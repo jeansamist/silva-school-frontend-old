@@ -8,15 +8,16 @@ export function Button({
   largeBtn = false,
   onClick = () => {},
   type = 'default',
+  color = 'default',
 }) {
   if (type === 'link')
     return (
-      <Link onClick={onClick} to={to} className={'link btn ' + (largeBtn ? 'btn-large ' : '')}>
+      <Link onClick={onClick} to={to} className={`link btn ${largeBtn ? 'btn-large ' : ''}btn-${color} `}>
         {children ? children : label}
       </Link>
     );
   return (
-    <button onClick={onClick} className={'btn ' + (largeBtn ? 'btn-large ' : '')}>
+    <button onClick={onClick} className={`btn ${largeBtn ? 'btn-large ' : ''}btn-${color} `}>
       {children ? children : label}
     </button>
   );
