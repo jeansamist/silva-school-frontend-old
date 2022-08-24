@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import SidebarLink from './SidebarLink';
 // import { FaShapes } from 'react-icons/fa';
-import { HiViewGrid } from 'react-icons/hi';
+import { HiViewGrid, HiDocument, HiUser, HiUsers, HiCalendar, HiCog, HiHome } from 'react-icons/hi';
 import Logo from '../Logo';
 export default function Sidebar() {
   const linksRef = useRef(null);
@@ -20,43 +20,103 @@ export default function Sidebar() {
         {
           label: 'Dashboard',
           active: true,
-          to: '#',
+          to: '/',
           Ico: HiViewGrid,
+        },
+        {
+          label: 'Classes',
+          to: '/classes',
+          Ico: HiHome,
+        },
+        {
+          label: 'Subjects',
+          to: '/subjects',
+          Ico: HiDocument,
         },
       ],
     },
     {
-      category: 'User',
+      category: 'Humans Services',
       links: [
         {
-          label: 'Profile',
-          to: '#',
-          Ico: HiViewGrid,
+          label: 'Students',
+          to: '/humans/students',
+          Ico: HiUsers,
         },
         {
-          label: 'Profile',
-          to: '#',
-          Ico: HiViewGrid,
+          label: 'Professors',
+          to: '/humans/professors',
+          Ico: HiUsers,
+        },
+        {
+          label: 'Workers',
+          to: '/humans/workers',
+          Ico: HiUsers,
         },
       ],
     },
     {
-      category: 'Settings',
+      category: 'Events',
+      links: [
+        {
+          label: 'Exams',
+          to: '/events/exams',
+          Ico: HiCalendar,
+        },
+        {
+          label: 'Results',
+          to: '/events/results',
+          Ico: HiCalendar,
+        },
+        {
+          label: 'Activities',
+          to: '/events/activities',
+          Ico: HiCalendar,
+        },
+        {
+          label: 'Meetings',
+          to: '/events/meetings',
+          Ico: HiCalendar,
+        },
+        {
+          label: 'Class Conseil',
+          to: '/events/classconseil',
+          Ico: HiCalendar,
+        },
+      ],
+    },
+    {
+      category: 'Documents',
+      links: [
+        {
+          label: 'Exams Subjects',
+          to: '/documents/exams',
+          Ico: HiDocument,
+        },
+        {
+          label: 'Exams Results',
+          to: '/documents/results',
+          Ico: HiDocument,
+        },
+        {
+          label: 'Reports',
+          to: '/documents/reports',
+          Ico: HiDocument,
+        },
+      ],
+    },
+    {
+      category: 'App Settings',
       links: [
         {
           label: 'Profile',
-          to: '#',
-          Ico: HiViewGrid,
+          to: '/settings/profile',
+          Ico: HiUser,
         },
         {
-          label: 'Profile',
-          to: '#',
-          Ico: HiViewGrid,
-        },
-        {
-          label: 'Profile',
-          to: '#',
-          Ico: HiViewGrid,
+          label: 'Advanced',
+          to: '/settings/advanced',
+          Ico: HiCog,
         },
       ],
     },

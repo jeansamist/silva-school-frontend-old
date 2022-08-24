@@ -853,7 +853,7 @@ input[type=checkbox] {
 }
 
 .stat-card>.datas>.label {
-  color: var(--color-info);
+  color: var(--color-info-2);
 }
 
 

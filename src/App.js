@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AppLoader from './components/AppLoader';
 import Sidebar from './components/sidebar/Sidebar';
 import Tobar from './components/topbar/Tobar';
@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setloading(false);
-    }, 3000);
+    }, 5000);
   }, [isAuth]);
   useEffect(() => {
     setisAuth(true);
@@ -34,7 +34,7 @@ function App() {
     );
   } else {
     return (
-      <Router location={{ pathname: '/' }}>
+      <Router>
         <div className="App">
           <div className="app-main">
             <Sidebar />
@@ -43,6 +43,8 @@ function App() {
               <div className="views">
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
+                  <Route path="/classes" element={'Classes'} />
+                  <Route path="/subjects" element={'Subjects'} />
                 </Routes>
               </div>
             </div>
