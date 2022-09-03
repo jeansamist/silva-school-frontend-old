@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import HomeJumbotron from '../components/elements/HomeJumbotron';
-import Grid from '../components/Grid';
-import Card, { StatCard } from '../components/ui/Cards';
-import Skeleton from '../components/ui/Skeleton';
-import Table from '../components/ui/Tables';
 import HomeStats from '../components/elements/HomeStats';
+import Card from '../components/ui/Cards';
+import Table from '../components/ui/Tables';
 export default function Dashboard() {
   return (
     <div className="view dashboard">

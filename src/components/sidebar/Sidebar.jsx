@@ -128,9 +128,9 @@ export default function Sidebar() {
       </div>
       <div className="links" ref={linksRef}>
         {_LINKS.map((category, key) => (
-          <>
+          <React.Fragment key={key}>
             {category.category ? (
-              <div key={key} className="category-name">
+              <div className="category-name">
                 {category.category}
               </div>
             ) : (
@@ -139,7 +139,7 @@ export default function Sidebar() {
             {category.links.map((_link, _key) => (
               <SidebarLink {..._link} key={_key} />
             ))}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </div>

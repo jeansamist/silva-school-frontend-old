@@ -111,6 +111,10 @@ button {
   gap: 0.5em;
 }
 
+.btn>.loader {
+  transform: translateY(-2px);
+}
+
 .btn:hover {
   background: var(--secondary);
 }
@@ -127,6 +131,11 @@ button {
   background: var(--yellow);
 }
 
+.btn:disabled,
+.btn.btn-disabled {
+  background: var(--primary-opact) !important;
+}
+
 .field {
   display: flex;
   align-items: center;
@@ -134,7 +143,9 @@ button {
   border-radius: var(--border-raduis);
   transition: border-color 0.3s linear;
   background: #fff;
+  position: relative;
 }
+
 
 .field>.field-input {
   position: relative;
@@ -151,6 +162,8 @@ button {
   transition: all 0.3s linear;
   pointer-events: none;
 }
+
+
 
 .field.active {
   border-color: var(--primary);
@@ -172,6 +185,8 @@ button {
   border-radius: var(--border-raduis);
   background: transparent;
 }
+
+
 
 .field>.field-textarea>textarea {
   padding: 0.5em 1em;
@@ -220,6 +235,7 @@ button {
   transition: color 0.3s linear;
 }
 
+
 .field.active>.field-ico {
   color: var(--primary);
 }
@@ -228,7 +244,7 @@ button {
 .field>.field-ico>svg>rect,
 .field>.field-ico>svg>line,
 .field>.field-ico>svg>circle {
-  stroke: var(--border);
+  stroke: var(--color-info);
 }
 
 .field.active>.field-ico>svg>path,
@@ -237,6 +253,70 @@ button {
 .field.active>.field-ico>svg>circle {
   stroke: var(--primary);
 }
+
+.field.field-disabled>.field-ico>svg>path,
+.field.field-disabled>.field-ico>svg>rect,
+.field.field-disabled>.field-ico>svg>line,
+.field.field-disabled>.field-ico>svg>circle {
+  stroke: var(--color-info);
+}
+
+.field.field-disabled>.field-ico {
+  color: var(--color-info) !important;
+}
+
+.field.field-disabled {
+  border: 1px solid var(--border) !important;
+}
+
+.field.field-disabled>.field-input>.field-input-label {
+  color: var(--color-info-2) !important;
+}
+
+.field.field-disabled>.field-input>input,
+.field.field-disabled>.field-textarea>textarea {
+  color: var(--color-info-2) !important;
+}
+
+
+
+
+
+.field.field-error>.field-ico>svg>path,
+.field.field-error>.field-ico>svg>rect,
+.field.field-error>.field-ico>svg>line,
+.field.field-error>.field-ico>svg>circle {
+  stroke: var(--red);
+}
+
+.field.field-error>.field-ico {
+  color: var(--red) !important;
+}
+
+.field.field-error {
+  border: 1px solid var(--red) !important;
+}
+
+.field.field-error>.field-input>.field-input-label {
+  color: var(--red) !important;
+}
+
+.field.field-error>.field-input>input,
+.field.field-error>.field-textarea>textarea {
+  color: var(--red) !important;
+}
+
+.field.field-error>.field-error-text {
+  font-size: 0.8em;
+  bottom: 0;
+  left: 0;
+  color: var(--red);
+  transform: translate(0.5em, calc(100% + 0.05em));
+  position: absolute;
+}
+
+
+
 
 .select {
   border: 1px solid var(--border);
@@ -292,7 +372,7 @@ button {
 .select>.options {
   position: absolute;
   bottom: 0;
-  transform: translateY(calc(100% + 0.5em));
+  transform: translateY(calc(100% + 0.5em)) !important;
   max-width: 400px;
   width: 100%;
   background: #fff;
@@ -302,6 +382,20 @@ button {
   min-height: 2.8125em;
   max-height: 8.4375em;
   overflow: auto;
+}
+
+.select.select-search>.options {
+  min-height: calc(3em * 2);
+  max-height: calc(8.4375em * 2);
+}
+
+.select>.options>input {
+  padding: 0.5em 1em;
+  width: calc(100% - 1em);
+  margin-top: 0.5em;
+  border: 1px solid var(--border);
+  transform: translateX(0.5em);
+  border-radius: var(--border-raduis);
 }
 
 .select>.options>.option {
@@ -317,7 +411,7 @@ button {
 
 .select:not(:last-child),
 .field:not(:last-child) {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .card {
