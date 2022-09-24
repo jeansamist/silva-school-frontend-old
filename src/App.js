@@ -12,7 +12,9 @@ import Form from './components/Form';
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 const schema = yup.object({
-  pseudo: yup.string().lowercase().required()
+  pseudo: yup.string().lowercase().required().max(25),
+  email: yup.string().email().required(),
+  password: yup.string().min(8).required()
 }).required()
 function App() {
   const [loading, setloading] = useState(true);
@@ -64,6 +66,8 @@ function App() {
                   <Route path="/" element={
                     <Form formState={formState} onSubmit={handleSubmit(onSubmit)}>
                       <FieldControlled control={control} name='pseudo' label='Pseudo' />
+                      <FieldControlled control={control} name='email' label='E-mail' />
+                      <FieldControlled control={control} name='password' label='Password' />
                     </Form>
                   } />
                   <Route path="/classes" element={'Classes'} />
