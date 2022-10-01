@@ -11,7 +11,7 @@ export default function Modal({
   border = true,
   backgroundImage = '',
   buttons = [],
-  callback = () => {},
+  callback = () => { },
 }) {
   const [_isOpen, set_isOpen] = useState(false);
   useEffect(() => {
@@ -28,15 +28,15 @@ export default function Modal({
               animate={{ opacity: 1 }}
               initial={{ opacity: 0 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2 }}
               className="modal-bg"
             ></motion.div>
             <motion.div
               layout
-              animate={{ opacity: 1, scale: 1 }}
-              initial={{ opacity: 0, scale: 1.1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: -20 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.1 }}
               className="modal"
               style={{ width: size + 'px' }}
             >

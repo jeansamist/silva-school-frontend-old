@@ -1,0 +1,39 @@
+table {
+  text-align: left;
+  width: 100%;
+  margin-top: 1em;
+  border-spacing: var(--border-raduis);
+}
+
+table td,
+table th {
+  padding: 0.5em 1em;
+  border-radius: var(--border-raduis);
+}
+
+table thead {
+  background: var(--primary);
+  color: #fff;
+  /* border-radius: 1em; */
+}
+
+table>tbody>tr {
+  cursor: pointer;
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: box-shadow 0.3s linear;
+}
+
+table>tbody>tr:hover {
+  box-shadow: 0px 2px 2px var(--primary-opact);
+}
+
+table .image {
+  width: 50px;
+  padding: 0;
+}
+
+table td .color {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}

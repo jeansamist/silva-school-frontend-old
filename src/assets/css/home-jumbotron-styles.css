@@ -1,0 +1,43 @@
+.jumbotron>.card {
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px var(--shadow);
+
+}
+
+.jumbotron .content {
+  position: relative;
+  z-index: 2;
+}
+
+
+.jumbotron .content>.text {
+  width: calc(95% - 200px);
+  transform: translateY(-5%);
+  line-height: 2;
+}
+
+.jumbotron .content>.illustration {
+  width: 200px;
+  transform: translateY(10%) translateX(30%) scale(1.5);
+}
+
+.jumbotron {
+  color: #fff;
+  width: 100%;
+  height: 300px;
+
+}
+
+.jumbotron .jumbotron-blur-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--primary-opact);
+  /* background: linear-gradient(45deg, var(--primary), var(--secondary)); */
+  /* backdrop-filter: blur(3px); */
+  z-index: 0;
+  border-radius: 20px;
+}

@@ -1,0 +1,94 @@
+.select {
+  border: 1px solid var(--border);
+  border-radius: var(--border-raduis);
+  transition: border-color 0.3s linear;
+  background: #fff;
+  border-radius: var(--border-raduis);
+  position: relative;
+}
+
+.select>.line>.label {
+  position: absolute;
+  top: 0.5em;
+  left: 1em;
+  color: inherit;
+  color: transparent;
+  transition: all 0.3s linear;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.select.active>.line>.label {
+  font-size: 0.7em;
+  color: var(--primary);
+  top: -0.9em;
+  left: 1.5em;
+  padding: 0 0.5em;
+  opacity: 1;
+  background: #fff;
+}
+
+.select>.line {
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.select>.line>.ico {
+  transform: translateY(2px);
+}
+
+.select.active>.line>.ico {
+  color: var(--primary);
+}
+
+.select.active {
+  border-color: var(--primary);
+}
+
+.select>.options {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(calc(100% + 0.5em)) !important;
+  max-width: 400px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--border-raduis);
+  box-shadow: 0 1px 4px var(--shadow);
+  min-height: 2.8125em;
+  max-height: 8.4375em;
+  overflow: auto;
+}
+
+.select.select-search>.options {
+  min-height: calc(3em * 2);
+  max-height: calc(8.4375em * 2);
+}
+
+.select>.options>input {
+  padding: 0.5em 1em;
+  width: calc(100% - 1em);
+  margin-top: 0.5em;
+  border: 1px solid var(--border);
+  transform: translateX(0.5em);
+  border-radius: var(--border-raduis);
+}
+
+.select>.options>.option {
+  padding: 0.5em 1em;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.select>.options>.option:hover {
+  box-shadow: 0px 2px 2px var(--primary-opact);
+}
+
+.select:not(:last-child),
+.field:not(:last-of-type) {
+  margin-bottom: 1.5em;
+}

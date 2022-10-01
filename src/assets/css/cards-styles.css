@@ -1,0 +1,90 @@
+.card {
+  background: #fff;
+  border-radius: var(--border-raduis);
+  box-shadow: 0 2px 5px var(--shadow);
+  position: relative;
+}
+
+.card.card-padding {
+  padding: 1.5em;
+}
+
+.card.card-border {
+  border: 1px solid var(--border);
+}
+
+.card.card-modal {
+  max-height: 80vh;
+  padding: 0 !important;
+  overflow: auto;
+}
+
+.card.card-modal>.card-head {
+  position: sticky;
+  top: 0em;
+  left: 0em;
+  background: #fff;
+  padding: 0.75em 1.5em;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px var(--shadow);
+}
+
+
+.card.card-modal>.card-footer {
+  position: sticky;
+  bottom: 0em;
+  left: 0em;
+  background: #fff;
+  padding: 0.75em 1.5em;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75em;
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -2px 5px var(--shadow);
+}
+
+.card.card-modal>.card-content {
+  padding: 1.5em;
+}
+
+.card>.card-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  z-index: 2;
+  position: relative;
+}
+
+.stat-card {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 1px 4px var(--shadow);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--border-raduis) * 2);
+}
+
+.stat-card>.ico {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1em;
+}
+
+.stat-card>.datas>.label {
+  color: var(--color-info-2);
+}
+
+.stat-card>.datas>.data {
+  font-size: 1.75em;
+  font-weight: bold;
+}

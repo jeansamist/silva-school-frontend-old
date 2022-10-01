@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaUser, FaSearch } from 'react-icons/fa';
-import { Controller, ControllerProps } from 'react-hook-form'
+import { Controller } from 'react-hook-form'
 
 export default function Field({
   activated = false,
@@ -54,7 +54,6 @@ export default function Field({
 
 /**
  * 
- * @param {ControllerProps} props 
  * @returns {Field}
  */
 export function FieldControlled(props) {
@@ -64,7 +63,6 @@ export function FieldControlled(props) {
       control={props.control}
       rules={props.rules}
       render={({ field, fieldState }) => {
-        console.log(fieldState);
         return <Field {...{ ...props, field, error: fieldState.error ? fieldState.error.message : false }} />
       }}
     />

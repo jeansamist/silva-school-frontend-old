@@ -10,17 +10,7 @@ export default function Dashboard() {
       <HomeStats />
       <div className="mb-2">
         <Card title="Recents Actions">
-          <Table />
-        </Card>
-      </div>
-      <div className="mb-2">
-        <Card title="Title">
-          <Table />
-        </Card>
-      </div>
-      <div className="mb-2">
-        <Card title="Title">
-          <Table />
+          <Table thead={['User', 'Action name', 'Date']} tdata={[{ data: ['John Doe', 'Create a new student', 'Thu 8 April'] }]} />
         </Card>
       </div>
     </div>

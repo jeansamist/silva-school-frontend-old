@@ -1,0 +1,169 @@
+.field {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--border-raduis);
+  transition: border-color 0.3s linear;
+  background: #fff;
+  position: relative;
+  width: 100%;
+}
+
+.field>.field-input {
+  position: relative;
+  /* line-height: 1; */
+  width: 100%;
+}
+
+.field>.field-input>.field-input-label {
+  position: absolute;
+  top: 0.5em;
+  left: 1em;
+  color: inherit;
+  opacity: 0.5;
+  transition: all 0.3s linear;
+  pointer-events: none;
+}
+
+.field.active {
+  border-color: var(--primary);
+}
+
+.field.active>.field-input>.field-input-label {
+  font-size: 0.7em;
+  color: var(--primary);
+  top: -0.9em;
+  left: 1.5em;
+  padding: 0 0.5em;
+  opacity: 1;
+}
+
+.field>.field-input>input {
+  padding: 0.5em 1em;
+  width: 100%;
+  border: none;
+  border-radius: var(--border-raduis);
+  background: transparent;
+}
+
+.field>.field-textarea>textarea {
+  padding: 0.5em 1em;
+  width: 100%;
+  border: none;
+  min-height: 10em;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border-radius: var(--border-raduis);
+  resize: vertical;
+  background: transparent;
+}
+
+.field>.field-textarea {
+  position: relative;
+  /* line-height: 1; */
+  width: 100%;
+}
+
+.field>.field-textarea>.field-input-label {
+  position: absolute;
+  top: 0.5em;
+  left: 1em;
+  color: inherit;
+  opacity: 0.5;
+  transition: all 0.3s linear;
+  pointer-events: none;
+}
+
+.field.active>.field-textarea>.field-input-label {
+  font-size: 0.7em;
+  color: var(--primary);
+  top: -0.9em;
+  left: 1.5em;
+  padding: 0 0.5em;
+  opacity: 1;
+}
+
+.field>.field-ico {
+  padding: 0.5em 1em;
+  padding-left: 0;
+  background: transparent;
+  transform: translateY(2px);
+  color: var(--color-info);
+  transition: color 0.3s linear;
+}
+
+.field.active>.field-ico {
+  color: var(--primary);
+}
+
+.field>.field-ico>svg>path,
+.field>.field-ico>svg>rect,
+.field>.field-ico>svg>line,
+.field>.field-ico>svg>circle {
+  stroke: var(--color-info);
+}
+
+.field.active>.field-ico>svg>path,
+.field.active>.field-ico>svg>rect,
+.field.active>.field-ico>svg>line,
+.field.active>.field-ico>svg>circle {
+  stroke: var(--primary);
+}
+
+.field.field-disabled>.field-ico>svg>path,
+.field.field-disabled>.field-ico>svg>rect,
+.field.field-disabled>.field-ico>svg>line,
+.field.field-disabled>.field-ico>svg>circle {
+  stroke: var(--color-info);
+}
+
+.field.field-disabled>.field-ico {
+  color: var(--color-info) !important;
+}
+
+.field.field-disabled {
+  border: 1px solid var(--border) !important;
+}
+
+.field.field-disabled>.field-input>.field-input-label {
+  color: var(--color-info-2) !important;
+}
+
+.field.field-disabled>.field-input>input,
+.field.field-disabled>.field-textarea>textarea {
+  color: var(--color-info-2) !important;
+}
+
+.field.field-error>.field-ico>svg>path,
+.field.field-error>.field-ico>svg>rect,
+.field.field-error>.field-ico>svg>line,
+.field.field-error>.field-ico>svg>circle {
+  stroke: var(--red);
+}
+
+.field.field-error>.field-ico {
+  color: var(--red) !important;
+}
+
+.field.field-error {
+  border: 1px solid var(--red) !important;
+}
+
+.field.field-error>.field-input>.field-input-label {
+  color: var(--red) !important;
+}
+
+.field.field-error>.field-input>input,
+.field.field-error>.field-textarea>textarea {
+  color: var(--red) !important;
+}
+
+.field.field-error>.field-error-text {
+  font-size: 0.8em;
+  bottom: 0;
+  left: 0;
+  color: var(--red);
+  transform: translate(0.5em, calc(100% + 0.05em));
+  position: absolute;
+}

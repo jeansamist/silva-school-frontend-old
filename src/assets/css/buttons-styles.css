@@ -1,0 +1,41 @@
+.btn {
+  padding: 0.5em 1em;
+  background: var(--primary);
+  color: #fff;
+  font-weight: bold;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background 0.3s linear;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.btn>.loader {
+  transform: translateY(-2px);
+}
+
+.btn:hover {
+  background: var(--secondary);
+}
+
+.btn.btn-large {
+  width: 100%;
+}
+
+.btn.btn-danger {
+  background: var(--red);
+}
+
+.btn.btn-warning {
+  background: var(--yellow);
+}
+
+.btn:disabled,
+.btn.btn-disabled {
+  background: var(--primary-opact) !important;
+}

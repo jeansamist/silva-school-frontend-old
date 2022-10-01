@@ -1,0 +1,57 @@
+.skeleton>.line {
+  background: var(--border);
+  height: 1em;
+  margin-bottom: 0.75em;
+  border-radius: 3px;
+  position: relative;
+}
+
+.skeleton>.square {
+  width: 100%;
+  height: 100%;
+  background: var(--border);
+  border-radius: 3px;
+  position: relative;
+}
+
+.skeleton>.line::after,
+.skeleton>.square::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0);
+  animation: skeleton-load 3s linear infinite;
+  background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.6), transparent);
+}
+
+@keyframes skeleton-load {
+  0% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+
+  26% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+
+  76% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
